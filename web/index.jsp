@@ -1,9 +1,7 @@
-<%@ page import="java.io.IOException" %>
 <%@ page import="Main.Point" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
 <jsp:useBean id="pointsBean" class="Main.PointsBean" scope="session"/>
-
 
 <html>
 
@@ -189,13 +187,14 @@
 <script defer="defer">
     <%
     for(Point point: pointsBean.getPoints().values()) {
-        out.print("draw_point("+point.toString()+");");
+        %>
+        draw_point(<%=point.toString()%>);
 //                        try {
 //                            out.print("getTableAjax("+args+");");
 //                        } catch (IOException e) {
 //                            e.printStackTrace();
 //                        }
-    }%>
+    <%}%>
     radio_pressed(1);
 </script>
 
