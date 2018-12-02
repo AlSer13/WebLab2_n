@@ -3,7 +3,7 @@ function init() {
 }
 
 function r_changed(r2) {
-    if (r2 && validate_r(r2)) {
+    if (validate_r(r2)) {
         let plot = document.getElementById("svg_plot");
         let toRemove = [];
         plot.childNodes.forEach(function (childNode) {
@@ -43,8 +43,8 @@ function plotClicked(event){
         let r = window.r1;
         let oX = convertXReverse(event.offsetX, r); //=== undefined ? event.layerX : event.offsetX;
         let oY = convertYReverse(event.offsetY, r); //=== undefined ? event.layerY : event.offsetY;
-        document.getElementById("x_input").setAttribute("value", oX);
-        document.getElementById("r_input").setAttribute("value", r);
+        document.getElementById("x_input").value = oX;
+        document.getElementById("r_input").value = r;
         validate_xyr(oX, oY, r, 0);
     }
 }

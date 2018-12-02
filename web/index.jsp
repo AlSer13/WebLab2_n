@@ -19,6 +19,8 @@
     <h2>Zhetesova Dana p3217, v. 28705</h2>
 </div>
 <div id="container">
+    <div id="message" class="element">
+    </div>
     <div id="content">
         <div id="input">
             <script>init();</script>
@@ -54,8 +56,7 @@
                         <th>
                             <p>
                                 <label for="r_input">R: </label>
-                                <input type="text" id="r_input" name="r" maxlength="6" pattern="^[1-3]((\.)\d{1,5})?$"
-                                       onchange="validate_r()" onkeyup="r_changed(this.value)">
+                                <input type="text" id="r_input" name="r" maxlength="6" pattern="^[1-3]((\.)\d{1,5})?$" onkeyup="r_changed(this.value)">
                             </p>
                             <div id="alert_block_R">from 1 to 4</div>
                         </th>
@@ -166,9 +167,6 @@
                     <td><b>Success</b></td>
                 </tr>
             </table>
-        </div>
-
-        <div id="message" class="element">
         </div>
     </div>
     <script defer="defer">
