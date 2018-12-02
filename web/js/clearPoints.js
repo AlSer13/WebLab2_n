@@ -44,8 +44,6 @@ function plotClicked(event){
         let r = window.r1;
         let oX = convertXReverse(event.offsetX, r); //=== undefined ? event.layerX : event.offsetX;
         let oY = convertYReverse(event.offsetY, r); //=== undefined ? event.layerY : event.offsetY;
-        document.getElementById("x_input").setAttribute("value", oX);
-        document.getElementById("y_input").setAttribute("value", oY);
         validate_xy(oX, oY, r, 0);
     }
 }
