@@ -26,7 +26,7 @@ function r_changed(r2) {
         toRemove.forEach(function (childNode) {
             childNode.setAttribute('cx', convertXr(childNode.getAttribute('cx'), window.r1, r2));
             childNode.setAttribute('cy', convertYr(childNode.getAttribute('cy'), window.r1, r2));
-            if (+childNode.ownR === r2) {
+            if (+childNode.ownR === +r2) {
                 childNode.setAttribute('fill-opacity', "1");
                 childNode.setAttribute('stroke-opacity', "1");
             } else {
