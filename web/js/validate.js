@@ -1,9 +1,14 @@
 function validate() {
-    let y = document.getElementById("y_input").value;
     let x = document.getElementById("x_input").value;
-    y = y.replace(",", ".");
+    let y = document.getElementById("y_input").value;
+    let r = document.getElementById("r_input").value;
+    r = r.replace(",", ".");
     x = x.replace(",", ".");
-    return validate_xyr(x, y);
+    return validate_xyr(x, y, r);
+}
+
+function y_to_hidden(y) {
+    document.getElementById("y_input").value = y;
 }
 
 function validate_xyr(x, y, r) {
@@ -11,7 +16,6 @@ function validate_xyr(x, y, r) {
         getTableAjax(x, y, r, 0);
     }
     return false;
-
 }
 
 function validate_y(y) {

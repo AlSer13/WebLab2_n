@@ -24,7 +24,7 @@
     <div id="content">
         <div id="input">
             <script>init();</script>
-            <form action="${pageContext.request.contextPath}/controller" onsubmit="return validate()" method="get"
+            <form onsubmit="return validate()" method="get"
                   id="form">
                 <table>
                     <tr>
@@ -64,8 +64,7 @@
                     <tr>
                         <th>
                             <input type="submit">
-                            <input type="hidden" id="y" name="y">
-                            <input type="hidden" name="target" value="new_point">
+                            <input type="hidden" id="y_input">
                         </th>
                     </tr>
                 </table>
