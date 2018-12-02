@@ -1,10 +1,9 @@
 function init() {
     window.r1 = 1.0;
-    window.results = [];
 }
 
-function radio_pressed(r2) {
-    if (r2 && r2>0 && !isNaN(r2)) {
+function r_changed(r2) {
+    if (r2 && r2>0 && !isNaN(r2) && validate_r(r2)) {
         let plot = document.getElementById("svg_plot");
         let toRemove = [];
         plot.childNodes.forEach(function (childNode) {
@@ -37,6 +36,10 @@ function radio_pressed(r2) {
         });
         window.r1 = r2;
     }
+}
+
+function validate_r(r){
+    //put your code here
 }
 
 function plotClicked(event){

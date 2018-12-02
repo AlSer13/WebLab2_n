@@ -92,4 +92,5 @@ function getTableAjax(x, y, r, restoring) {
 }
 
 function alrt(msg, x_or_y) {
+    document.getElementById("alert_block_" + x_or_y.toUpperCase()).innerHTML = msg; // тут по хитрому считается id alert блока
 }

@@ -7,7 +7,6 @@ function draw_point(point) {
     circle.setAttribute("fill", point.success ? "#00ff00" : "#ff0000");
     circle.setAttribute("stroke-width", "1");
     circle.setAttribute("stroke", "black");
-    circle.onclick = circlePressed;
     circle.ownR = point.r;
     // circle.setAttribute("class", "draggable");
     plot.appendChild(circle);
@@ -18,7 +17,6 @@ function draw_point(point) {
         circle.setAttribute('fill-opacity', "0.2");
         circle.setAttribute('stroke-opacity', "0.5");
     }
-    circle.onclick.apply(circle);
 }
 
 function convertX(x) {

@@ -10,8 +10,8 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styles/external.css">
     <script type="text/javascript" src="js/validate.js"></script>
-    <script type="text/javascript" src="js/circlePressed.js"></script>
-    <script type="text/javascript" src="js/clearPoints.js"></script>
+    <script type="text/javascript" src="js/addRow.js"></script>
+    <script type="text/javascript" src="js/plot_functions.js"></script>
     <script type="text/javascript" src="js/draw_point.js"></script>
 </head>
 <body>
@@ -29,6 +29,7 @@
                             <p>
                                 <label for="x_input">X: </label>
                                 <input type="text" maxlength="6" id="x_input" name="x" pattern="^(-)?[0-2]((\.)\d{1,5})?$" onchange="return validate_x();">
+                                <div id="alert_block_X"></div>
                             </p>
                         </th>
                     </tr>
@@ -45,14 +46,16 @@
                                 <input type="button" id="y1.5" value="1.5" onclick="y_to_hidden(1.5)">
                                 <input type="button" id="y2" value="2" onclick="y_to_hidden(2)"></p>
                         </th>
+                        <div id="alert_block_Y"></div>
                     </tr>
                     <tr>
                         <th>
                             <p>
                                 <label for="r">R: </label>
                                 <input type="text" id="r" name="r" maxlength="6" pattern="^[1-3]((\.)\d{1,5})?$"
-                                       onchange="validate_r()" onkeyup="if (this.value) radio_pressed(this.value)">
+                                       onchange="validate_r()" onkeyup="r_changed(this.value)">
                             </p>
+                            <div id="alert_block_R"></div>
                         </th>
                     </tr>
                     <tr>
@@ -167,7 +170,7 @@
             %>
         draw_point(<%=point.toString()%>);
         <%}%>
-        radio_pressed(1);
+        r_changed(1);
     </script>
 </div>
 </body>
