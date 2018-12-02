@@ -10,7 +10,6 @@ function draw_point(point) {
     circle.ownR = point.r;
     // circle.setAttribute("class", "draggable");
     plot.appendChild(circle);
-    window.results[point.id] = point;
     addRow(point);
     circle.id = point.id;
     if (+circle.ownR !== +window.r1) {

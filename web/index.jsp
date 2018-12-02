@@ -1,5 +1,5 @@
 <%@ page import="Main.Point" %>
-<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <jsp:useBean id="pointsBean" class="Main.PointsBean" scope="session"/>
 <html>
 <head>
@@ -22,15 +22,17 @@
     <div id="content">
         <div id="input">
             <script>init();</script>
-            <form action="${pageContext.request.contextPath}/controller" onsubmit="return validate()" method="get" id="form">
+            <form action="${pageContext.request.contextPath}/controller" onsubmit="return validate()" method="get"
+                  id="form">
                 <table>
                     <tr>
                         <th>
-                            <p>
-                                <label for="x_input">X: </label>
-                                <input type="text" maxlength="6" id="x_input" name="x" pattern="^(-)?[0-2]((\.)\d{1,5})?$" onchange="return validate_x();">
-                                <div id="alert_block_X"></div>
-                            </p>
+
+                            <label for="x_input">X: </label>
+                            <input type="text" maxlength="6" id="x_input" name="x" pattern="^(-)?[0-2]((\.)\d{1,5})?$"
+                                   onkeyup="validate_x(this.value);"/>
+                            <div id="alert_block_X">from -3 to 3</div>
+
                         </th>
                     </tr>
                     <tr>
@@ -45,17 +47,17 @@
                                 <input type="button" id="y1" value="1" onclick="y_to_hidden(1)" width="6px">
                                 <input type="button" id="y1.5" value="1.5" onclick="y_to_hidden(1.5)">
                                 <input type="button" id="y2" value="2" onclick="y_to_hidden(2)"></p>
+                            <div id="alert_block_Y">from -2 to 2</div>
                         </th>
-                        <div id="alert_block_Y"></div>
                     </tr>
                     <tr>
                         <th>
                             <p>
-                                <label for="r">R: </label>
-                                <input type="text" id="r" name="r" maxlength="6" pattern="^[1-3]((\.)\d{1,5})?$"
+                                <label for="r_input">R: </label>
+                                <input type="text" id="r_input" name="r" maxlength="6" pattern="^[1-3]((\.)\d{1,5})?$"
                                        onchange="validate_r()" onkeyup="r_changed(this.value)">
                             </p>
-                            <div id="alert_block_R"></div>
+                            <div id="alert_block_R">from 1 to 4</div>
                         </th>
                     </tr>
                     <tr>
@@ -67,7 +69,7 @@
                     </tr>
                 </table>
                 <p id="alrt">
-                    <%  if (!"0".equals(request.getParameter("errCode")) &&
+                    <% if (!"0".equals(request.getParameter("errCode")) &&
                             request.getParameter("errcode") != null) {
                         out.println("Error code: " + request.getAttribute("errCode").toString());
                         out.println(request.getAttribute("message").toString());
@@ -79,23 +81,28 @@
         <div id="plot_and_result">
             <div id="plot" class="element" title="Plot">
                 <div>
-                    <svg id="svg_plot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" onclick="plotClicked(evt)">
+                    <svg id="svg_plot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"
+                         onclick="plotClicked(evt)">
                         <defs>
                             <style>
                                 .cls-2 {
                                     fill: none;
                                 }
+
                                 .cls-2, .cls-3 {
                                     stroke: #000;
                                     stroke-miterlimit: 10;
                                     stroke-width: 0.5px;
                                 }
+
                                 .cls-4 {
                                     font-size: 12px;
                                 }
+
                                 .cls-4, .cls-5 {
                                     font-family: MyriadPro-Regular, Myriad Pro, serif;
                                 }
+
                                 .cls-5 {
                                     font-size: 14px;
                                 }</style>
