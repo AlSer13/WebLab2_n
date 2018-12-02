@@ -31,8 +31,8 @@
                         <th>
 
                             <label for="x_input">X: </label>
-                            <input type="text" maxlength="6" id="x_input" name="x" pattern="^(-)?[0-2]((\.)\d{1,5})?$"
-                                   onkeyup="validate_x(this.value);"/>
+                            <input type="text" value="0" maxlength="6" id="x_input" name="x" pattern="^(-)?[0-2]((\.)\d{1,5})?$"
+                                   onkeyup="validate_x(this.value);">
                             <div id="alert_block_X">from -3 to 3</div>
 
                         </th>
@@ -56,7 +56,7 @@
                         <th>
                             <p>
                                 <label for="r_input">R: </label>
-                                <input type="text" id="r_input" name="r" maxlength="6" pattern="^[1-3]((\.)\d{1,5})?$" onkeyup="r_changed(this.value)">
+                                <input type="text" id="r_input" name="r" maxlength="6" value="1" pattern="^[1-3]((\.)\d{1,5})?$" onkeyup="r_changed(this.value)">
                             </p>
                             <div id="alert_block_R">from 1 to 4</div>
                         </th>
